@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@firebase/app": "^0.4.24",
+    "@firebase/app-types": "^0.4.7",
     "@reach/router": "^1.2.1",
     "firebase": "^5.5.8",
     "re-base": "^4.0.0",
