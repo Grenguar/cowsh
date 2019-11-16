@@ -4,7 +4,6 @@ import { createGlobalStyle } from 'styled-components'
 import App from './App'
 import typography from './utils/typography'
 import fontFiles from './fonts/index.js'
-import GodMode from './components/GodMode'
 import WishList from './components/WishList'
 
 const GlobalStyles = createGlobalStyle`
