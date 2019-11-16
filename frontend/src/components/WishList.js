@@ -7,10 +7,14 @@ import GodDisplayCard from './GodDisplayCard'
 import WishDisplay from './WishDisplay'
 
 const Content = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  min-width: 100vw;
+  overflow: visible;
+  grid-gap: 1rem;
+  justify-content: center;
+  justify-items: center;
   .title {
     color: rgb(80, 80, 80);
     font-weight: lighter;
@@ -39,20 +43,45 @@ const PersonsWishes = styled.div`
   background: white;
 `
 
-const Wishes = styled.div``
+const Wishes = styled.div`
+  display: grid;
+  overflow: visible;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  width: 100%;
+  height: 100%;
+  background: blueviolet;
+`
+const Tasks = styled.div`
+  background: orange;
+  display: grid;
+  overflow: visible;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  width: 100%;
+  height: 100%;
+`
 
 class WishList extends Component {
   state = {
-    firebase: {},
-    name: '',
+    parent: null,
+    kid: null,
   }
 
   componentDidMount() {
-    this.ref = base.syncState('app', {
+    this.ref = base.syncState('app/parent', {
       context: this,
-      state: 'firebase',
+      state: 'parent',
       asArray: false,
-      then: () => console.log(this.state.firebase),
+      then: () => console.log(this.state.parent),
+    })
+    this.ref2 = base.syncState('app/kid', {
+      context: this,
+      state: 'kid',
+      asArray: false,
+      then: () => console.log(this.state.kid),
     })
 
     // On mount check for if user is already authenticaed
@@ -80,59 +109,14 @@ class WishList extends Component {
   }
   componentWillUnmount() {
     base.removeBinding(this.ref)
-  }
-
-  toggleWishColor = (person, index) => {
-    if (
-      this.state.name === 'Daniel Egerev' ||
-      this.state.name === 'Manuel Linnankoski' ||
-      this.state.name === 'Rafael Linnankoski' ||
-      this.state.name === 'Tero Rehula'
-    ) {
-      const firebaseState = { ...this.state.firebase }
-      firebaseState[person].wishes[index].isGreen = !firebaseState[person].wishes[index].isGreen
-      this.setState({ firebase: firebaseState }, () => console.log(this.state.firebase))
-    }
+    base.removeBinding(this.ref2)
   }
 
   render() {
-    const people = Object.keys(this.state.firebase)
     return (
       <Content>
-        <Wishes>
-          {people.map(
-            person =>
-              this.state.firebase[person].wishes && (
-                <PersonsWishes key={person}>
-                  <h4>{person}</h4>
-                  <p className="balance">
-                    Balance <span className="amount">${this.state.firebase[person].balance}</span>
-                  </p>
-                  <button
-                    onClick={() => {
-                      this.setBalance(this.state.firebase[person].balance)
-                    }}
-                    className="balance__add"
-                  >
-                    Add 100$
-                  </button>
-                  <Cards>
-                    {this.state.firebase[person].wishes.map((wish, index) => (
-                      <WishDisplay
-                        person={person}
-                        index={index}
-                        key={wish.wish}
-                        text={wish.wish}
-                        color={wish.isGreen ? wishColorQuestion : wishColor}
-                        margin="10px"
-                        toggleWishColor={this.toggleWishColor}
-                      />
-                    ))}
-                  </Cards>
-                </PersonsWishes>
-              )
-          )}
-        </Wishes>
+        <Wishes>1</Wishes>
+        <Tasks>2</Tasks>
       </Content>
     )
   }

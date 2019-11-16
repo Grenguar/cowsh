@@ -61,8 +61,7 @@ class Main extends React.Component {
   }
 
   componentWillUnmount() {
-    base.removeBinding(this.ref1)
-    base.removeBinding(this.ref2)
+    base.removeBinding(this.ref4)
     base.removeBinding(this.ref3)
   }
 
@@ -73,14 +72,6 @@ class Main extends React.Component {
     const wishes = [...this.state.wishes]
     wishes.splice(index, 1)
     this.setState({ wishes })
-  }
-
-  setBad = bad => {
-    this.setState({ bad: [bad, ...this.state.bad] })
-  }
-
-  setStepNumber = number => {
-    this.setState({ step: number })
   }
 
   render() {
@@ -97,22 +88,15 @@ class Main extends React.Component {
         />
       )
     }
-    const { name, logout } = this.props
-    const firstName = name.replace(/ .*/, '')
     return (
       <AllWrapper>
         <Wrapper>
           <Content>
-            <h1>
-              Sup {firstName}! <span>😎</span>
-            </h1>
+            <h1>Add wish</h1>
             <Link to="/dashboard">Go to dashboard!</Link>
             {renderStep(this.state.step)}
           </Content>
         </Wrapper>
-        <button className="logout" onClick={this.props.logout}>
-          Logout
-        </button>
       </AllWrapper>
     )
   }
