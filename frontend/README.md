@@ -1,4 +1,4 @@
-## Slurp Retro web app
+## WishVault Retro web app
 
 In the project directory, you can run:
 
@@ -16,4 +16,4 @@ As a user, you would log into the app with your google account, the retro host w
 
 Example pages:
 
-<img height="540" src="https://www.dropbox.com/s/bj6b5pf8adkrkl8/slurpretroImage.jpeg?raw=1" /> <img height="500" src="https://www.dropbox.com/s/gt3ypsrn4qxokis/Screenshot%202019-07-15%2023.07.27.png?raw=1" />
+<img height="540" src="https://www.dropbox.com/s/bj6b5pf8adkrkl8/WishVaultretroImage.jpeg?raw=1" /> <img height="500" src="https://www.dropbox.com/s/gt3ypsrn4qxokis/Screenshot%202019-07-15%2023.07.27.png?raw=1" />

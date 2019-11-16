@@ -78,7 +78,7 @@ class Main extends React.Component {
     const renderStep = number => {
       return (
         <Step
-          text="Make some wishes that you want to happen at Slurp 🧚‍🌟"
+          text="Make some wishes that you want to happen at WishVault 🧚‍🌟"
           color={wishColorQuestion}
           textArray={this.state.wishes.map(wish => wish.wish)}
           addStuff={wish => {
