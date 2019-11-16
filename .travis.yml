@@ -8,7 +8,6 @@ node_js:
 before_script:
   - echo starting build
   - cd frontend
-  - rm package-lock.json
   - npm install -g firebase-tools
   - npm install
 
