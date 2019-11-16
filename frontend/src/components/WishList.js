@@ -33,9 +33,10 @@ const Cards = styled.div`
 const PersonsWishes = styled.div`
   margin: 1rem 0;
   padding: 1rem 0;
-  border: 1px dashed ${wishColor};
   border-radius: 15px;
   max-width: 600px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 40px;
+  background: white;
 `
 
 const Wishes = styled.div``
@@ -53,6 +54,7 @@ class WishList extends Component {
       asArray: false,
       then: () => console.log(this.state.firebase),
     })
+
     // On mount check for if user is already authenticaed
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
@@ -63,11 +65,19 @@ class WishList extends Component {
 
   // Handle authentication with firebases incoming data about the user
   authHandler = authData => {
-    console.log(authData)
     const { uid, displayName } = authData.user
     this.setState({ name: displayName })
   }
-
+  setBalance = balance => {
+    const name = this.state.firebase[0]
+    this.setState({
+      firebase: {
+        name: {
+          balance: balance + 100,
+        },
+      },
+    })
+  }
   componentWillUnmount() {
     base.removeBinding(this.ref)
   }
@@ -89,19 +99,23 @@ class WishList extends Component {
     const people = Object.keys(this.state.firebase)
     return (
       <Content>
-        <h4 className="title">
-          You are looking at the wish list now. Make them happen! 💫🌟
-          <br /> <strong>Rafael, Manuel or Tero</strong> will mark them green if the wish will come true. Once it came
-          true, please remove it from the wish list by going to the place where you created it.
-          <br />
-          If the wish is not going to happen, let the person know about it. Only they can remove it from the wish list.
-        </h4>
         <Wishes>
           {people.map(
             person =>
               this.state.firebase[person].wishes && (
                 <PersonsWishes key={person}>
                   <h4>{person}</h4>
+                  <p className="balance">
+                    Balance <span className="amount">${this.state.firebase[person].balance}</span>
+                  </p>
+                  <button
+                    onClick={() => {
+                      this.setBalance(this.state.firebase[person].balance)
+                    }}
+                    className="balance__add"
+                  >
+                    Add 100$
+                  </button>
                   <Cards>
                     {this.state.firebase[person].wishes.map((wish, index) => (
                       <WishDisplay

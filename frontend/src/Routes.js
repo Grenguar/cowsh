@@ -55,33 +55,25 @@ body {
     font-family: "Gotham Rounded";
     font-style: normal;
     font-weight: bold;
-    src: local("Gotham Rounded Bold"), local("GothamRounded-Bold"), url(${
-      fontFiles.GothamRoundedBold
-    }) format("opentype");
+    src: local("Gotham Rounded Bold"), local("GothamRounded-Bold"), url(${fontFiles.GothamRoundedBold}) format("opentype");
   }  
   @font-face {
     font-family: "Gotham Rounded";
     font-style: normal;
     font-weight: 500;
-    src: local("Gotham Rounded Medium"), local("GothamRounded-Medium"), url(${
-      fontFiles.GothamRoundedMedium
-    }) format("opentype");
+    src: local("Gotham Rounded Medium"), local("GothamRounded-Medium"), url(${fontFiles.GothamRoundedMedium}) format("opentype");
   }  
   /* @font-face {
     font-family: "Gotham Rounded";
     font-style: normal;
     font-weight: normal;
-    src: local("Gotham Rounded Book"), local("GothamRounded-Book"), url(${
-      fontFiles.GothamRoundedBook
-    }) format("opentype");
+    src: local("Gotham Rounded Book"), local("GothamRounded-Book"), url(${fontFiles.GothamRoundedBook}) format("opentype");
   }   */
   @font-face {
     font-family: "Gotham Rounded";
     font-style: normal;
     font-weight: 200;
-    src: local("Gotham Rounded Light"), local("GothamRounded-Light"), url(${
-      fontFiles.GothamRoundedLight
-    }) format("opentype");
+    src: local("Gotham Rounded Light"), local("GothamRounded-Light"), url(${fontFiles.GothamRoundedLight}) format("opentype");
   } 
 `
 
@@ -91,8 +83,8 @@ class Routes extends Component {
       <React.Fragment>
         <GlobalStyles />
         <Router>
-          <WishList path="wishlist" />
-          <GodMode path="godmode" />
+          <WishList path="dashboard" />
+
           <App path="/*" />
         </Router>
       </React.Fragment>

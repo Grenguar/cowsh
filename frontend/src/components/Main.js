@@ -5,6 +5,8 @@ import styled from 'styled-components'
 import AddCard from './AddCard'
 import DisplayCard from './DisplayCard'
 import Step from './Step'
+import { Link } from '@reach/router'
+
 import Number from './Number'
 import { goodColor, badColor, wishColor, wishColorQuestion } from '../utils/colors'
 
@@ -39,29 +41,21 @@ const AllWrapper = styled.div`
 const { Provider, Consumer } = React.createContext()
 class Main extends React.Component {
   state = {
-    good: [],
-    bad: [],
     wishes: [],
-    step: 1,
+    balance: null,
   }
 
   componentDidMount() {
-    this.ref1 = base.syncState(`/app/${this.props.name}/good`, {
-      context: this,
-      state: 'good',
-      asArray: true,
-      then: () => console.log(this.state),
-    })
-    this.ref2 = base.syncState(`/app/${this.props.name}/bad`, {
-      context: this,
-      state: 'bad',
-      asArray: true,
-      then: () => console.log(this.state),
-    })
     this.ref3 = base.syncState(`/app/${this.props.name}/wishes`, {
       context: this,
       state: 'wishes',
       asArray: true,
+      then: () => console.log(this.state),
+    })
+    this.ref4 = base.syncState(`/app/${this.props.name}/balance`, {
+      context: this,
+      state: 'balance',
+      asArray: false,
       then: () => console.log(this.state),
     })
   }
@@ -72,18 +66,8 @@ class Main extends React.Component {
     base.removeBinding(this.ref3)
   }
 
-  setGood = good => {
-    this.setState(prevState => ({ good: [good, ...prevState.good] }))
-  }
-  removeGood = index => {
-    const good = [...this.state.good]
-    good.splice(index, 1)
-    this.setState({ good })
-  }
-  removeBad = index => {
-    const bad = [...this.state.bad]
-    bad.splice(index, 1)
-    this.setState({ bad })
+  setBalance = balance => {
+    this.setState(prevState => ({ balance: [balance, ...prevState.balance] }))
   }
   removeWish = index => {
     const wishes = [...this.state.wishes]
@@ -101,45 +85,15 @@ class Main extends React.Component {
 
   render() {
     const renderStep = number => {
-      if (number === '1')
-        return (
-          <Step
-            text="What are the things you are proud of in the past few weeks which you want to share with everyone? 🤩"
-            color={goodColor}
-            textArray={this.state.good}
-            addStuff={this.setGood}
-            removeStuff={this.removeGood}
-          />
-        )
-      if (number === '2')
-        return (
-          <Step
-            text="Is there something holding you back from doing your best work? Is there anything that should be improved?💪"
-            color={badColor}
-            textArray={this.state.bad}
-            addStuff={this.setBad}
-            removeStuff={this.removeBad}
-          />
-        )
-      if (number === '3')
-        return (
-          <Step
-            text="Make some wishes that you want to happen at Slurp 🧚‍🌟"
-            color={wishColorQuestion}
-            textArray={this.state.wishes.map(wish => wish.wish)}
-            addStuff={wish => {
-              this.setState({ wishes: [{ wish: wish, isGreen: false }, ...this.state.wishes] })
-            }}
-            removeStuff={this.removeWish}
-          />
-        )
       return (
         <Step
-          text="What are the things you are proud of in the past few weeks which you want to share with everyone? 🤩"
-          color={goodColor}
-          textArray={this.state.good}
-          addStuff={this.setGood}
-          removeStuff={this.removeGood}
+          text="Make some wishes that you want to happen at Slurp 🧚‍🌟"
+          color={wishColorQuestion}
+          textArray={this.state.wishes.map(wish => wish.wish)}
+          addStuff={wish => {
+            this.setState({ wishes: [{ wish: wish, isGreen: false }, ...this.state.wishes] })
+          }}
+          removeStuff={this.removeWish}
         />
       )
     }
@@ -152,11 +106,7 @@ class Main extends React.Component {
             <h1>
               Sup {firstName}! <span>😎</span>
             </h1>
-            <Numbers>
-              <Number number="1" color={goodColor} setIsGoodOpen={this.setStepNumber} />
-              <Number number="2" color={badColor} setIsGoodOpen={this.setStepNumber} />
-              <Number number="3" color={wishColorQuestion} setIsGoodOpen={this.setStepNumber} />
-            </Numbers>
+            <Link to="/dashboard">Go to dashboard!</Link>
             {renderStep(this.state.step)}
           </Content>
         </Wrapper>
