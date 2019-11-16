@@ -78,7 +78,7 @@ class Main extends React.Component {
           color={wishColorQuestion}
           textArray={this.state.wishes.map(wish => wish.wish)}
           addStuff={wish => {
-            this.setState({ wishes: [{ wish, ...this.state.wishes] })
+            this.setState({ wishes: [{ wish, ...this.state.wishes }] })
           }}
           removeStuff={this.removeWish}
         />
