@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import firebase from 'firebase'
 import base from '../base'
 import styled from 'styled-components'
-import { wishColor, wishColorQuestion } from '../utils/colors'
+import { wishColor, wishColorQuestion, colors } from '../utils/colors'
 import GodDisplayCard from './GodDisplayCard'
 import WishDisplay from './WishDisplay'
+import AddTask from './AddTask'
+import DisplayTask from './DisplayTask'
 
 const Content = styled.div`
   display: grid;
@@ -51,7 +53,9 @@ const Wishes = styled.div`
   justify-items: center;
   width: 100%;
   height: 100%;
-  background: blueviolet;
+  h3 {
+    color: orange;
+  }
 `
 const Tasks = styled.div`
   background: orange;
@@ -62,12 +66,17 @@ const Tasks = styled.div`
   justify-items: center;
   width: 100%;
   height: 100%;
+  h3 {
+    color: white;
+  }
 `
 
 class WishList extends Component {
   state = {
     parent: null,
     kid: null,
+    showAddTask: false,
+    balance: null,
   }
 
   componentDidMount() {
@@ -83,40 +92,86 @@ class WishList extends Component {
       asArray: false,
       then: () => console.log(this.state.kid),
     })
-
-    // On mount check for if user is already authenticaed
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        this.authHandler({ user })
-      }
+    this.ref3 = base.syncState('app/kid/balance', {
+      context: this,
+      state: 'balance',
+      asArray: false,
+      then: () => console.log(this.state.balance),
     })
   }
 
-  // Handle authentication with firebases incoming data about the user
-  authHandler = authData => {
-    const { uid, displayName } = authData.user
-    this.setState({ name: displayName })
-  }
-  setBalance = balance => {
-    const name = this.state.firebase[0]
-    this.setState({
-      firebase: {
-        name: {
-          balance: balance + 100,
-        },
-      },
-    })
-  }
   componentWillUnmount() {
     base.removeBinding(this.ref)
     base.removeBinding(this.ref2)
+    base.removeBinding(this.ref3)
+  }
+
+  setBalance = balance => {
+    console.log('hehreasrsadfkj;, ', balance)
+
+    const previousBalance = this.state.kid.balance
+
+    this.setState(prevState => ({
+      balance: parseInt(previousBalance || 0) + parseInt(balance),
+    }))
+  }
+
+  handleCheckboxChange = index => {
+    const newTasks = this.state.kid.tasks.map((task, i) => {
+      if (i === index) {
+        this.setBalance(task.price)
+        task.completed = true
+      }
+      return task
+    })
+    this.setState({
+      kid: {
+        tasks: newTasks,
+      },
+    })
+  }
+  addTask = (description, price) => {
+    const prevTasks = this.state.kid.tasks
+
+    if (prevTasks) {
+      this.setState({
+        kid: {
+          tasks: [...prevTasks, { description: description, price: price, completed: false, status: false }],
+        },
+      })
+    } else {
+      this.setState({
+        kid: {
+          tasks: [{ description: description, price: price, completed: false }],
+        },
+      })
+    }
   }
 
   render() {
+    const tasks = this.state.kid && this.state.kid.tasks
     return (
       <Content>
-        <Wishes>1</Wishes>
-        <Tasks>2</Tasks>
+        <Wishes>
+          <h3>Wishes</h3>
+        </Wishes>
+        <Tasks>
+          <h3>Tasks</h3>
+          <AddTask text="Add Task" color={colors.orange} handleAddTask={this.addTask} />
+          {tasks &&
+            tasks.map((task, index) => (
+              <DisplayTask
+                key={index}
+                index={index}
+                text={task.description}
+                color={colors.orange}
+                margin="10px"
+                completed={task.completed}
+                price={task.price}
+                handleCheckboxChange={this.handleCheckboxChange}
+              />
+            ))}
+        </Tasks>
       </Content>
     )
   }
