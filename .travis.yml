@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "12"
+  - node
+
+before_script:
+  - echo starting build
+  - cd frontend
+  - rm package-lock.json
+  - yarn global add firebase-tools
+  - yarn install
+
+script:
+  - yarn build
+
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN --non-interactive

@@ -46,13 +46,13 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    this.ref3 = base.syncState(`/app/${this.props.name}/wishes`, {
+    this.ref3 = base.syncState(`/app/kid/wishes`, {
       context: this,
       state: 'wishes',
       asArray: true,
       then: () => console.log(this.state),
     })
-    this.ref4 = base.syncState(`/app/${this.props.name}/balance`, {
+    this.ref4 = base.syncState(`/app/kid/balance`, {
       context: this,
       state: 'balance',
       asArray: false,
@@ -64,10 +64,6 @@ class Main extends React.Component {
     base.removeBinding(this.ref4)
     base.removeBinding(this.ref3)
   }
-
-  setBalance = balance => {
-    this.setState(prevState => ({ balance: [balance, ...prevState.balance] }))
-  }
   removeWish = index => {
     const wishes = [...this.state.wishes]
     wishes.splice(index, 1)
@@ -78,11 +74,11 @@ class Main extends React.Component {
     const renderStep = number => {
       return (
         <Step
-          text="Make some wishes that you want to happen 🧚‍🌟"
+          text="Make some wishes that you want to happen at WishVault 🧚‍🌟"
           color={wishColorQuestion}
           textArray={this.state.wishes.map(wish => wish.wish)}
           addStuff={wish => {
-            this.setState({ wishes: [{ wish: wish, isGreen: false }, ...this.state.wishes] })
+            this.setState({ wishes: [{ wish, ...this.state.wishes] })
           }}
           removeStuff={this.removeWish}
         />
