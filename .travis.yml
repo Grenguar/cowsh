@@ -1,12 +1,13 @@
 language: node_js
 cache: npm
 node_js:
-  - "12"
+  - 8
   - node
 
 before_script:
   - echo starting build
   - cd frontend
+  - rm package-lock.json
   - npm install -g firebase-tools
   - npm install
 
