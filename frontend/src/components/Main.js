@@ -1,14 +1,9 @@
 import React from 'react'
-import firebase from 'firebase'
 import base from '../base'
 import styled from 'styled-components'
-import AddCard from './AddCard'
-import DisplayCard from './DisplayCard'
 import Step from './Step'
 import { Link } from '@reach/router'
-
-import Number from './Number'
-import { goodColor, badColor, wishColor, wishColorQuestion } from '../utils/colors'
+import { wishColorQuestion } from '../utils/colors'
 
 const Content = styled.div`
   display: grid;
@@ -19,12 +14,6 @@ const Content = styled.div`
   justify-content: center;
   align-content: center;
   justify-items: center;
-`
-
-const Numbers = styled.div`
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 1rem;
 `
 
 const Wrapper = styled.div`
@@ -38,7 +27,6 @@ const AllWrapper = styled.div`
   }
 `
 
-const { Provider, Consumer } = React.createContext()
 class Main extends React.Component {
   state = {
     wishes: [],

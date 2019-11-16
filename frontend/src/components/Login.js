@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { Component } from 'react'
 
 class Login extends Component {
   render() {
@@ -8,8 +7,8 @@ class Login extends Component {
         <h3>Login with Google</h3>
         <button onClick={this.props.authenticate}>Login</button>
       </>
-    );
+    )
   }
 }
 
-export default Login;
+export default Login
