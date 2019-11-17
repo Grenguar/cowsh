@@ -65,6 +65,7 @@ struct CertificateView: View {
       }
       .frame(width: CGFloat(200), height: CGFloat(200))
       .background(Color.black)
+         .border(Color.white, width: 2)
 //      .cornerRadius(10)
 //      .shadow(radius: 10)
    }
