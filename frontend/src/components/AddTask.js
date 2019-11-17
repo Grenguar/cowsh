@@ -34,6 +34,7 @@ const InputWithButton = styled.div`
 
   background: white;
   button {
+    font-weight: 700;
     border-radius: 0px;
     padding: 10px;
     background: ${props => props.color};

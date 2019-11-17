@@ -55,8 +55,10 @@ const Wishes = styled.div`
   height: 100%;
   h3 {
     color: orange;
+    font-size: 64px;
   }
   .balance {
+    font-size: 32px;
     span {
       font-weight: 700;
       color: rgba(0, 0, 0, 0.8);
@@ -78,6 +80,7 @@ const Tasks = styled.div`
   height: 100%;
   h3 {
     color: white;
+    font-size: 64px;
   }
 `
 
@@ -194,7 +197,7 @@ class WishList extends Component {
           <Wishes>
             <h3>Wishes</h3>
             <p className="balance">
-              Jenny's balance: <span>{this.state.balance}€</span>
+              Jenny's balance: <span>€{this.state.balance}</span>
             </p>
             <WishCards>
               {!Array.isArray(this.state.wishes) || !this.state.wishes.length ? (

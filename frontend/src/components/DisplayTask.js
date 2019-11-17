@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import Checkbox from './Checkbox'
 const Card = styled.div`
+  cursor: pointer;
   display: flex;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 20px;
   background: white;
-  padding: 5px 15px;
+  padding: 0px 15px;
   color: ${props => props.color};
   border-radius: 15px;
   margin: ${props => props.margin};
@@ -32,7 +33,7 @@ class DisplayTask extends React.Component {
       >
         <Checkbox checked={this.props.completed} onChange={this.handleCheckboxChange} />
         <p>{this.props.text}</p>
-        <p className="price">{this.props.price}€</p>
+        <p className="price">€{this.props.price}</p>
       </Card>
     )
   }
