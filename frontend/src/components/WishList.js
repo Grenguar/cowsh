@@ -183,7 +183,7 @@ class WishList extends Component {
     })
 
     var urlText = wishText.replace(/ /gi, '+')
-    window.open(`https://www.amazon.com/search/s?k=${urlText}`)
+    window.open(`https://www.amazon.com/search/s?k=${urlText}&affilate=JEFF_BEZOS`)
 
     const wishes = this.state.wishes
     wishes.splice(index, 1)
