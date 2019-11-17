@@ -93,6 +93,7 @@ class WishList extends Component {
     kid: null,
     balance: null,
     wishes: [],
+    wishText: '',
   }
 
   componentDidMount() {
@@ -171,40 +172,67 @@ class WishList extends Component {
     }
   }
 
+  handlePay = (wishText, price, index) => {
+    const previousBalance = this.state.kid.balance
+    this.setState({
+      balance: parseInt(previousBalance || 0) - parseInt(price),
+    })
+
+    var urlText = wishText.replace(/ /gi, '+')
+    window.open(`https://www.amazon.com/search/s?k=${urlText}`)
+
+    const wishes = this.state.wishes
+    wishes.splice(index, 1)
+    this.setState({ wishes })
+  }
+
   render() {
     const tasks = this.state.kid && this.state.kid.tasks
     return (
-      <Content>
-        <Wishes>
-          <h3>Wishes</h3>
-          <p className="balance">
-            Jenny's balance: <span>{this.state.balance}€</span>
-          </p>
-          <WishCards>
-            {this.state.wishes &&
-              this.state.wishes.map((wish, index) => (
-                <DisplayWish text={wish.wish} color={colors.orange} price={wish.price} />
+      <>
+        <Content>
+          <Wishes>
+            <h3>Wishes</h3>
+            <p className="balance">
+              Jenny's balance: <span>{this.state.balance}€</span>
+            </p>
+            <WishCards>
+              {!Array.isArray(this.state.wishes) || !this.state.wishes.length ? (
+                <p>There are no wishes yet!</p>
+              ) : (
+                this.state.wishes.map((wish, index) => (
+                  <DisplayWish
+                    key={index}
+                    index={index}
+                    balance={this.state.balance}
+                    text={wish.wish}
+                    color={colors.orange}
+                    price={wish.price}
+                    handlePay={this.handlePay}
+                  />
+                ))
+              )}
+            </WishCards>
+          </Wishes>
+          <Tasks>
+            <h3>Tasks</h3>
+            <AddTask text="Add Task" color={colors.orange} handleAddTask={this.addTask} />
+            {tasks &&
+              tasks.map((task, index) => (
+                <DisplayTask
+                  key={index}
+                  index={index}
+                  text={task.description}
+                  color={colors.orange}
+                  margin="10px"
+                  completed={task.completed}
+                  price={task.price}
+                  handleCheckboxChange={this.handleCheckboxChange}
+                />
               ))}
-          </WishCards>
-        </Wishes>
-        <Tasks>
-          <h3>Tasks</h3>
-          <AddTask text="Add Task" color={colors.orange} handleAddTask={this.addTask} />
-          {tasks &&
-            tasks.map((task, index) => (
-              <DisplayTask
-                key={index}
-                index={index}
-                text={task.description}
-                color={colors.orange}
-                margin="10px"
-                completed={task.completed}
-                price={task.price}
-                handleCheckboxChange={this.handleCheckboxChange}
-              />
-            ))}
-        </Tasks>
-      </Content>
+          </Tasks>
+        </Content>
+      </>
     )
   }
 }

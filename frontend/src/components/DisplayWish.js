@@ -28,12 +28,19 @@ const Content = styled.div`
 
 const TextAndPrice = styled.div`
   display: grid;
-  grid-template-rows: 1fr 40px;
+  grid-template-rows: 1fr 50px;
   border-radius: 15px;
   .price {
     color: white;
     font-weight: 700;
     font-size: 64px;
+  }
+
+  button {
+    border-radius: 0px;
+    padding: 10px;
+    background: white;
+    color: orange;
   }
 `
 
@@ -44,6 +51,17 @@ class DisplayWish extends React.Component {
         <p>{this.props.text}</p>
         <TextAndPrice color={this.props.color}>
           <div className="price">{this.props.price}€</div>
+          {this.props.balance >= this.props.price ? (
+            <button
+              onClick={() => {
+                this.props.handlePay(this.props.text, this.props.price)
+              }}
+            >
+              <span>Pay</span>
+            </button>
+          ) : (
+            undefined
+          )}
         </TextAndPrice>
       </Content>
     )
