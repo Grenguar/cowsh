@@ -28,7 +28,7 @@ class DisplayTask extends React.Component {
     return (
       <Card
         color={this.props.color}
-        onClick={() => this.props.handleCheckboxChange(this.props.index)}
+        onClick={() => !this.props.completed && this.props.handleCheckboxChange(this.props.index)}
         margin={this.props.margin || 0}
       >
         <Checkbox checked={this.props.completed} onChange={this.handleCheckboxChange} />
