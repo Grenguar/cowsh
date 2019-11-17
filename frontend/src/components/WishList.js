@@ -33,6 +33,7 @@ const Cards = styled.div`
   padding: 1rem 0;
   display: flex;
   flex-wrap: wrap;
+  overflow: scroll;
   justify-content: center;
 `
 const PersonsWishes = styled.div`

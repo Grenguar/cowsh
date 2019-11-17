@@ -5,7 +5,6 @@ import App from './App'
 import typography from './utils/typography'
 import fontFiles from './fonts/index.js'
 import WishList from './components/WishList'
-
 const GlobalStyles = createGlobalStyle`
  ${typography}
 

@@ -9,7 +9,6 @@ const Content = styled.div`
   min-height: 200px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 40px;
   border-radius: 15px;
-  overflow: hidden;
   background: ${props => props.color};
   margin: 1rem;
   margin-bottom: 30px;
@@ -46,6 +45,68 @@ const TextAndPrice = styled.div`
     span {
       font-weight: 700;
     }
+  }
+`
+const Content2 = styled.div`
+  display: grid;
+  grid-template-rows: auto 1fr;
+  max-width: 500px;
+  width: 300px;
+  min-height: 200px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 40px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: white;
+  margin: auto;
+  margin-bottom: 30px;
+  input {
+    color: ${props => props.color};
+    max-width: 50px;
+    border: none;
+    border-radius: 5px;
+  }
+  p {
+    padding: 20px;
+    margin: 0;
+    color: ${props => props.color};
+  }
+`
+
+const InputWithButton = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 40px;
+  border-radius: 15px;
+  overflow: hidden;
+
+  background: white;
+  button {
+    font-weight: 700;
+    border-radius: 0px;
+    padding: 10px;
+    background: ${props => props.color};
+  }
+
+  input,
+  textarea {
+    background: white;
+    border-radius: 0;
+    display: block;
+    text-align: center;
+    width: 100%;
+    &:focus {
+      outline: none;
+    }
+  }
+  textarea {
+    resize: none;
+    border: none;
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+    margin: auto;
+    font-weight: lighter;
+    border-radius: 5px;
+    text-align: center;
   }
 `
 
