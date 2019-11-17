@@ -22,6 +22,7 @@ const Content = styled.div`
   p {
     font-weight: 700;
     padding: 20px;
+    padding-bottom: 0;
     margin: 0;
     color: white;
   }
