@@ -83,9 +83,7 @@ class Routes extends Component {
       <React.Fragment>
         <GlobalStyles />
         <Router>
-          <WishList path="dashboard" />
-
-          <App path="/*" />
+          <WishList path="/*" />
         </Router>
       </React.Fragment>
     )

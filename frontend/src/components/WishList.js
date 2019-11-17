@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import firebase from 'firebase'
 import base from '../base'
 import styled from 'styled-components'
-import { wishColor, wishColorQuestion, colors } from '../utils/colors'
-import GodDisplayCard from './GodDisplayCard'
-import WishDisplay from './WishDisplay'
+import { colors } from '../utils/colors'
 import AddTask from './AddTask'
 import DisplayTask from './DisplayTask'
+import DisplayWish from './DisplayWish'
 
 const Content = styled.div`
   display: grid;
@@ -47,6 +46,7 @@ const PersonsWishes = styled.div`
 
 const Wishes = styled.div`
   display: grid;
+  position: relative;
   overflow: visible;
   justify-content: center;
   align-content: center;
@@ -55,6 +55,16 @@ const Wishes = styled.div`
   height: 100%;
   h3 {
     color: orange;
+  }
+  .balance {
+    span {
+      font-weight: 700;
+      color: rgba(0, 0, 0, 0.8);
+    }
+    color: orange;
+    position: absolute;
+    top: 20px;
+    right: 40px;
   }
 `
 const Tasks = styled.div`
@@ -71,12 +81,18 @@ const Tasks = styled.div`
   }
 `
 
+const WishCards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`
+
 class WishList extends Component {
   state = {
     parent: null,
     kid: null,
-    showAddTask: false,
     balance: null,
+    wishes: [],
   }
 
   componentDidMount() {
@@ -98,12 +114,19 @@ class WishList extends Component {
       asArray: false,
       then: () => console.log(this.state.balance),
     })
+    this.ref4 = base.syncState('app/kid/wishes', {
+      context: this,
+      state: 'wishes',
+      asArray: false,
+      then: () => console.log(this.state.wishes),
+    })
   }
 
   componentWillUnmount() {
     base.removeBinding(this.ref)
     base.removeBinding(this.ref2)
     base.removeBinding(this.ref3)
+    base.removeBinding(this.ref4)
   }
 
   setBalance = balance => {
@@ -154,6 +177,15 @@ class WishList extends Component {
       <Content>
         <Wishes>
           <h3>Wishes</h3>
+          <p className="balance">
+            Jenny's balance: <span>{this.state.balance}€</span>
+          </p>
+          <WishCards>
+            {this.state.wishes &&
+              this.state.wishes.map((wish, index) => (
+                <DisplayWish text={wish.wish} color={colors.orange} price={wish.price} />
+              ))}
+          </WishCards>
         </Wishes>
         <Tasks>
           <h3>Tasks</h3>
