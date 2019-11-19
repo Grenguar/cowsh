@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3CDB764DC026999FB4DBD477 /* Pods_WishVault.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1569F51D1C0C7B51E46419F6 /* Pods_WishVault.framework */; };
+		79C92DAB2380BDB800F67658 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C92DAA2380BDB800F67658 /* Home.swift */; };
+		79C92DAD2380BDCE00F67658 /* HomeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C92DAC2380BDCE00F67658 /* HomeList.swift */; };
+		79C92DAF2380BDE900F67658 /* CertificateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C92DAE2380BDE900F67658 /* CertificateRow.swift */; };
+		79C92DB12380BE0100F67658 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C92DB02380BE0100F67658 /* BlurView.swift */; };
+		79C92DB32380C21800F67658 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79C92DB22380C21700F67658 /* GoogleService-Info.plist */; };
+		79C92DB52380D60200F67658 /* MakeWishForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C92DB42380D60200F67658 /* MakeWishForm.swift */; };
+		79C92DB72380E52800F67658 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C92DB62380E52800F67658 /* ModalView.swift */; };
+		79C92DB92380E64000F67658 /* CreateFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C92DB82380E64000F67658 /* CreateFlow.swift */; };
+		79C92DBB2380EE3300F67658 /* WishModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C92DBA2380EE3300F67658 /* WishModel.swift */; };
+		79EA7C242380622200B2863B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA7C232380622200B2863B /* AppDelegate.swift */; };
+		79EA7C262380622200B2863B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA7C252380622200B2863B /* SceneDelegate.swift */; };
+		79EA7C282380622200B2863B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA7C272380622200B2863B /* ContentView.swift */; };
+		79EA7C2A2380622300B2863B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79EA7C292380622300B2863B /* Assets.xcassets */; };
+		79EA7C2D2380622300B2863B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79EA7C2C2380622300B2863B /* Preview Assets.xcassets */; };
+		79EA7C302380622300B2863B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79EA7C2E2380622300B2863B /* LaunchScreen.storyboard */; };
+		79EA7C382380670F00B2863B /* VaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EA7C372380670F00B2863B /* VaultView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1569F51D1C0C7B51E46419F6 /* Pods_WishVault.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WishVault.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EAADF48231ED06758D7672D /* Pods-WishVault.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishVault.release.xcconfig"; path = "Target Support Files/Pods-WishVault/Pods-WishVault.release.xcconfig"; sourceTree = "<group>"; };
+		79C92DAA2380BDB800F67658 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		79C92DAC2380BDCE00F67658 /* HomeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeList.swift; sourceTree = "<group>"; };
+		79C92DAE2380BDE900F67658 /* CertificateRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateRow.swift; sourceTree = "<group>"; };
+		79C92DB02380BE0100F67658 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		79C92DB22380C21700F67658 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		79C92DB42380D60200F67658 /* MakeWishForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeWishForm.swift; sourceTree = "<group>"; };
+		79C92DB62380E52800F67658 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
+		79C92DB82380E64000F67658 /* CreateFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlow.swift; sourceTree = "<group>"; };
+		79C92DBA2380EE3300F67658 /* WishModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishModel.swift; sourceTree = "<group>"; };
+		79EA7C202380622200B2863B /* WishVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79EA7C232380622200B2863B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		79EA7C252380622200B2863B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		79EA7C272380622200B2863B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		79EA7C292380622300B2863B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		79EA7C2C2380622300B2863B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		79EA7C2F2380622300B2863B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		79EA7C312380622300B2863B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79EA7C372380670F00B2863B /* VaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaultView.swift; sourceTree = "<group>"; };
+		EE28AC118024583C1D9AB0C9 /* Pods-WishVault.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishVault.debug.xcconfig"; path = "Target Support Files/Pods-WishVault/Pods-WishVault.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		79EA7C1D2380622200B2863B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CDB764DC026999FB4DBD477 /* Pods_WishVault.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		79EA7C172380622200B2863B = {
+			isa = PBXGroup;
+			children = (
+				79EA7C222380622200B2863B /* WishVault */,
+				79EA7C212380622200B2863B /* Products */,
+				7C70E63F78FD08C2F55D1911 /* Pods */,
+				C0A83454E6D0828AEAFDC7EE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		79EA7C212380622200B2863B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79EA7C202380622200B2863B /* WishVault.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		79EA7C222380622200B2863B /* WishVault */ = {
+			isa = PBXGroup;
+			children = (
+				79EA7C232380622200B2863B /* AppDelegate.swift */,
+				79EA7C252380622200B2863B /* SceneDelegate.swift */,
+				79C92DB62380E52800F67658 /* ModalView.swift */,
+				79EA7C272380622200B2863B /* ContentView.swift */,
+				79C92DB42380D60200F67658 /* MakeWishForm.swift */,
+				79C92DAA2380BDB800F67658 /* Home.swift */,
+				79C92DAC2380BDCE00F67658 /* HomeList.swift */,
+				79C92DB82380E64000F67658 /* CreateFlow.swift */,
+				79C92DBA2380EE3300F67658 /* WishModel.swift */,
+				79C92DAE2380BDE900F67658 /* CertificateRow.swift */,
+				79C92DB02380BE0100F67658 /* BlurView.swift */,
+				79EA7C372380670F00B2863B /* VaultView.swift */,
+				79EA7C292380622300B2863B /* Assets.xcassets */,
+				79EA7C2E2380622300B2863B /* LaunchScreen.storyboard */,
+				79EA7C312380622300B2863B /* Info.plist */,
+				79C92DB22380C21700F67658 /* GoogleService-Info.plist */,
+				79EA7C2B2380622300B2863B /* Preview Content */,
+			);
+			path = WishVault;
+			sourceTree = "<group>";
+		};
+		79EA7C2B2380622300B2863B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				79EA7C2C2380622300B2863B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7C70E63F78FD08C2F55D1911 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE28AC118024583C1D9AB0C9 /* Pods-WishVault.debug.xcconfig */,
+				5EAADF48231ED06758D7672D /* Pods-WishVault.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C0A83454E6D0828AEAFDC7EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1569F51D1C0C7B51E46419F6 /* Pods_WishVault.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		79EA7C1F2380622200B2863B /* WishVault */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79EA7C342380622300B2863B /* Build configuration list for PBXNativeTarget "WishVault" */;
+			buildPhases = (
+				E3AB229BEE555974FF730101 /* [CP] Check Pods Manifest.lock */,
+				79EA7C1C2380622200B2863B /* Sources */,
+				79EA7C1D2380622200B2863B /* Frameworks */,
+				79EA7C1E2380622200B2863B /* Resources */,
+				0C9098F1A823244981BDB78D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WishVault;
+			productName = WishVault;
+			productReference = 79EA7C202380622200B2863B /* WishVault.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		79EA7C182380622200B2863B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Richard Topchii";
+				TargetAttributes = {
+					79EA7C1F2380622200B2863B = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = 79EA7C1B2380622200B2863B /* Build configuration list for PBXProject "WishVault" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 79EA7C172380622200B2863B;
+			productRefGroup = 79EA7C212380622200B2863B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				79EA7C1F2380622200B2863B /* WishVault */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		79EA7C1E2380622200B2863B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79EA7C302380622300B2863B /* LaunchScreen.storyboard in Resources */,
+				79C92DB32380C21800F67658 /* GoogleService-Info.plist in Resources */,
+				79EA7C2D2380622300B2863B /* Preview Assets.xcassets in Resources */,
+				79EA7C2A2380622300B2863B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C9098F1A823244981BDB78D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WishVault/Pods-WishVault-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WishVault/Pods-WishVault-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WishVault/Pods-WishVault-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3AB229BEE555974FF730101 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WishVault-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79EA7C1C2380622200B2863B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79C92DAD2380BDCE00F67658 /* HomeList.swift in Sources */,
+				79C92DB12380BE0100F67658 /* BlurView.swift in Sources */,
+				79C92DB52380D60200F67658 /* MakeWishForm.swift in Sources */,
+				79EA7C242380622200B2863B /* AppDelegate.swift in Sources */,
+				79C92DB72380E52800F67658 /* ModalView.swift in Sources */,
+				79C92DB92380E64000F67658 /* CreateFlow.swift in Sources */,
+				79C92DBB2380EE3300F67658 /* WishModel.swift in Sources */,
+				79EA7C382380670F00B2863B /* VaultView.swift in Sources */,
+				79C92DAB2380BDB800F67658 /* Home.swift in Sources */,
+				79C92DAF2380BDE900F67658 /* CertificateRow.swift in Sources */,
+				79EA7C262380622200B2863B /* SceneDelegate.swift in Sources */,
+				79EA7C282380622200B2863B /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		79EA7C2E2380622300B2863B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79EA7C2F2380622300B2863B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		79EA7C322380622300B2863B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		79EA7C332380622300B2863B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		79EA7C352380622300B2863B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE28AC118024583C1D9AB0C9 /* Pods-WishVault.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WishVault/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = WishVault/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = junction.2019.wishvault;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		79EA7C362380622300B2863B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EAADF48231ED06758D7672D /* Pods-WishVault.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WishVault/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = WishVault/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = junction.2019.wishvault;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		79EA7C1B2380622200B2863B /* Build configuration list for PBXProject "WishVault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79EA7C322380622300B2863B /* Debug */,
+				79EA7C332380622300B2863B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79EA7C342380622300B2863B /* Build configuration list for PBXNativeTarget "WishVault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79EA7C352380622300B2863B /* Debug */,
+				79EA7C362380622300B2863B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 79EA7C182380622200B2863B /* Project object */;
+}
